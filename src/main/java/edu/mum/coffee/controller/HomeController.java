@@ -15,4 +15,23 @@ public class HomeController {
 	public String securePage() {
 		return "secure";
 	}
+	
+	@GetMapping("/products")
+	public String products(){
+		return "products";
+	}
+	
+	@GetMapping("/order")
+	public String order(){
+		return "order";
+	}
+	
+	@GetMapping("/users")
+	public String users(){
+		return "users";
+	}
+	@GetMapping("/profile")
+	public String profile(){
+		return "profile";
+	}
 }

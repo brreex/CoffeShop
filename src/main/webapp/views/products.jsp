@@ -42,7 +42,10 @@
 	</nav>
 
 	<div class="container">
-		<a href="<c:url value="/secure" />"> Go to Secure Area </a>
+		<h1>List Of Products</h1>
+		<div id="#productlist">
+		
+		</div>
 	</div>
 
 
@@ -52,5 +55,6 @@
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 		type="text/javascript"></script>
+		<script src="/js/coffeshop.js" type="text/javascript"></script>
 </body>
 </html>

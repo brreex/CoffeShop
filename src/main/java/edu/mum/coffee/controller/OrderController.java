@@ -34,17 +34,17 @@ public class OrderController {
 		return orderService.findByProduct(product);
 	}
 	
-	@RequestMapping(value="/ws/orders",method=RequestMethod.GET)
+	/*@RequestMapping(value="/ws/orders",method=RequestMethod.GET)
 	public List<Order> findByPerson(@RequestBody Person person){
 		return orderService.findByPerson(person);
-	}
+	}*/
 	
 	
-	@RequestMapping(value="/ws/orders",method=RequestMethod.GET)
+	/*@RequestMapping(value="/ws/orders",method=RequestMethod.GET)
 	public List<Order> getAllOrders(){
 		return orderService.findAll();
 	}
-	
+	*/
 	
 	@RequestMapping(value="/ws/order/{id}",method=RequestMethod.GET)
 	public Order getOrder(@RequestParam int id){
@@ -52,9 +52,9 @@ public class OrderController {
 	}
 	
 	
-	@RequestMapping(value="/ws/order/{id}",method=RequestMethod.DELETE)
+	/*@RequestMapping(value="/ws/order/{id}",method=RequestMethod.DELETE)
 	public void deleteOrder(@RequestBody Order order){
 		orderService.delete(order);
-	}
+	}*/
 	
 }
