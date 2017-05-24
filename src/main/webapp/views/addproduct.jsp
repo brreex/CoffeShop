@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Add Product</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
@@ -27,9 +27,9 @@
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="/">Home</a></li>
+					<li><a href="/">Home</a></li>
 					<li><a href="/products">Products</a></li>
-					<li><a href="/product">AddProduct</a></li>
+					<li class="active"><a href="/product">AddProduct</a></li>
 					<li><a href="/order">Order</a></li>
 					<li><a href="/users">Users</a></li>
 				</ul>

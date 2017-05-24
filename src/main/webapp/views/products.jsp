@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Products</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/style.css">
@@ -36,6 +36,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/profile">Profile</a></li>
+					<li><a href="/signup">SignUp</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->

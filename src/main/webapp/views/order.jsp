@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Order</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
@@ -35,14 +35,31 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/profile">Profile</a></li>
+					<li><a href="/signup">SignUp</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
 		</div>
 	</nav>
 
-	<div class="container">
-		<h1>Order Page</h1>
+		<div class="container">
+		<h1>Products List</h1>
+		<div id="productlist">
+			<table style="width: 75%">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>ProductName</th>
+						<th>Description</th>
+						<th>Price</th>
+						<th>Type</th>
+					</tr>
+				</thead>
+				<tbody id="tbody">
+				</tbody>
+			</table>
+
+		</div>
 	</div>
 	<!-- /.container -->
 	<script
@@ -50,6 +67,6 @@
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 		type="text/javascript"></script>
-	<script src="/js/coffeshop.js" type="text/javascript"></script>
+	<script src="/js/order.js" type="text/javascript"></script>
 </body>
 </html>

@@ -34,6 +34,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/profile">Profile</a></li>
+					<li><a href="/signup">SignUp</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->

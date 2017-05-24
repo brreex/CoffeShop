@@ -45,4 +45,13 @@ public class HomeController {
 		return "redirect:/success";
 	}
 	
+	@GetMapping("/signup")
+	public String signup(){
+		return "signup";
+	}
+	
+	@GetMapping("/403")
+	public String anauthorized(){
+		return "403";
+	}
 }
