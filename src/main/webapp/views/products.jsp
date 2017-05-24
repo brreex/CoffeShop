@@ -30,6 +30,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="/">Home</a></li>
 					<li class="active"><a href="/products">Products</a></li>
+					<li><a href="/product">AddProduct</a></li>
 					<li><a href="/order">Order</a></li>
 					<li><a href="/users">Users</a></li>
 				</ul>

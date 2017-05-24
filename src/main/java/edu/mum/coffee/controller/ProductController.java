@@ -2,12 +2,16 @@ package edu.mum.coffee.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
 import edu.mum.coffee.domain.Product;
 import edu.mum.coffee.service.ProductService;
 
@@ -33,10 +37,20 @@ public class ProductController {
 		return productService.getProduct(id);
 	}
 	
-	@RequestMapping(value="/ws/product",method=RequestMethod.POST)
+	/*@RequestMapping(value="/ws/product",method=RequestMethod.POST)
 	public void addProduct(@RequestBody Product product){
 		System.out.println(product);
 		productService.save(product);
+	}*/
+	
+	@RequestMapping(value="/ws/product",method=RequestMethod.POST)
+	public ModelAndView addProduct(@ModelAttribute Product prod, Model model){
+		ModelAndView mnv = new ModelAndView();
+		mnv.setViewName("addproduct");
+		System.out.println(prod);
+		productService.save(prod);
+		model.addAttribute("message","Product Saved");
+		return mnv;
 	}
 	
 	@RequestMapping(value="/ws/product/{id}",method=RequestMethod.DELETE)

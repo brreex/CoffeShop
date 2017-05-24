@@ -44,9 +44,7 @@
 	<div class="container">
 		<h1>Add Product Page</h1>
 
-		<form action="/action_page.php">
-
-
+		<form id="submitForm" method="post" action="/ws/product">
 			<div class="form-group">
 				<label for="productName">productName:</label> <input type="text"
 					class="form-control" id="productName"
@@ -66,16 +64,15 @@
 			</div>
 			
 			<div class="form-group">
-				<select class="selectpicker show-menu-arrow">
+				<select class="selectpicker show-menu-arrow" name="productType">
 					<option>BREAKFAST</option>
 					<option>LUNCH</option>
 					<option>DINNER</option>
 				</select> <br>
 			</div>
 
-			<button type="submit" class="btn btn-default" onclick="saveProduct()">Add Product</button>
+			<button type="submit" class="btn btn-default">Add Product</button>
 		</form>
-
 
 	</div>
 	<!-- /.container -->
