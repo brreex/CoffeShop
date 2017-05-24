@@ -27,9 +27,10 @@
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li ><a href="/">Home</a></li>
+					<li class="active"><a href="/">Home</a></li>
 					<li><a href="/products">Products</a></li>
-					<li class="active"><a href="/order">Order</a></li>
+					<li><a href="/product">AddProduct</a></li>
+					<li><a href="/order">Order</a></li>
 					<li><a href="/users">Users</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
@@ -41,7 +42,41 @@
 	</nav>
 
 	<div class="container">
-		<h1>Order Page</h1>
+		<h1>Add Product Page</h1>
+
+		<form action="/action_page.php">
+
+
+			<div class="form-group">
+				<label for="productName">productName:</label> <input type="text"
+					class="form-control" id="productName"
+					placeholder="Enter productName" name="productName">
+			</div>
+
+			<div class="form-group">
+				<label for="description">Description:</label> <input type="text"
+					class="form-control" id="description"
+					placeholder="Enter Description" name="description">
+			</div>
+
+			<div class="form-group">
+				<label for="price">Price:</label> <input type="text"
+					class="form-control" id="price" placeholder="Enter Price"
+					name="price">
+			</div>
+			
+			<div class="form-group">
+				<select class="selectpicker show-menu-arrow">
+					<option>BREAKFAST</option>
+					<option>LUNCH</option>
+					<option>DINNER</option>
+				</select> <br>
+			</div>
+
+			<button type="submit" class="btn btn-default" onclick="saveProduct()">Add Product</button>
+		</form>
+
+
 	</div>
 	<!-- /.container -->
 	<script

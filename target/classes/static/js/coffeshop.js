@@ -8,18 +8,44 @@ $(function(){
 });
 
 function ajaxSuccess(jsonData){
-    var ul = $('<ul>')
-
-    for(data of jsonData){
-        ul.append('<li>'+data.productName+'</li>');
-        ul.append('<li>'+data.description+'</li>');
-        ul.append('<li>'+data.price+'</li>');
-        ul.append('<li>'+data.productType+'</li>');
-    }
-
-    ul.appendTo('#productlist')
+		$.each(jsonData, function (index, item) {
+		    var eachrow = "<tr>"
+		                + "<td>" + item.id + "</td>"
+		                + "<td>" + item.productName + "</td>"
+		                + "<td>" + item.description + "</td>"
+		                + "<td>" + item.price + "</td>"
+		                + "<td>" + item.productType + "</td>"
+		                +"<td> <input type='submit' value='Delete' onclick='deleteProduct("+item.id+")'/></td>"
+		                + "</tr>";
+		    $('#tbody').append(eachrow);
+			});
 }
 
 function ajaxFailure(Error){
     alert('Error');
 }
+
+function deleteProduct(id){
+	$.ajax({
+		url:'http://localhost:8080/ws/product/'+id,
+		type:'DELETE',
+		success:function(){
+			alert('Product Deleted')
+		},
+		fail:function(){
+			alert('Error Deleting');
+		}
+	});
+}
+
+
+
+
+
+
+
+
+
+
+
+

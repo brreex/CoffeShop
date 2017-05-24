@@ -13,7 +13,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<nav class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed"
@@ -23,7 +23,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">Coffee Club</a>
+				<a class="navbar-brand" href="['home']">Cycling Club</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -34,7 +34,6 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/profile">Profile</a></li>
-					
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -42,15 +41,14 @@
 	</nav>
 
 	<div class="container">
-		<a href="<c:url value="/secure" />"> Go to Secure Area </a>
+		<h1>Index Page</h1>
 	</div>
-
-
-
+	<!-- /.container -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 		type="text/javascript"></script>
+	<script src="/js/coffeshop.js" type="text/javascript"></script>
 </body>
 </html>

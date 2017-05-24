@@ -21,6 +21,11 @@ public class HomeController {
 		return "products";
 	}
 	
+	@GetMapping("/product")
+	public String product(){
+		return "addproduct";
+	}
+	
 	@GetMapping("/order")
 	public String order(){
 		return "order";

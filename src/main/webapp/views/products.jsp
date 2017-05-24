@@ -11,9 +11,10 @@
 <title>Insert title here</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<nav class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed"
@@ -23,18 +24,17 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">Coffee Club</a>
+				<a class="navbar-brand" href="/">Cycling Club</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="/">Home</a></li>
-					<li><a href="/products">Products</a></li>
+					<li><a href="/">Home</a></li>
+					<li class="active"><a href="/products">Products</a></li>
 					<li><a href="/order">Order</a></li>
 					<li><a href="/users">Users</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/profile">Profile</a></li>
-					
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -42,19 +42,30 @@
 	</nav>
 
 	<div class="container">
-		<h1>List Of Products</h1>
-		<div id="#productlist">
-		
+		<h1>Products List</h1>
+		<div id="productlist">
+			<table style="width: 75%">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>ProductName</th>
+						<th>Description</th>
+						<th>Price</th>
+						<th>Type</th>
+					</tr>
+				</thead>
+				<tbody id="tbody">
+				</tbody>
+			</table>
+
 		</div>
 	</div>
-
-
-
+	<!-- /.container -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 		type="text/javascript"></script>
-		<script src="/js/coffeshop.js" type="text/javascript"></script>
+	<script src="/js/coffeshop.js" type="text/javascript"></script>
 </body>
 </html>
