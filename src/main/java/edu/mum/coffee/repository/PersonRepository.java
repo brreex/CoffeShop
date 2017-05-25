@@ -10,7 +10,8 @@ import edu.mum.coffee.domain.Person;
 
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long> {
-
-	public List<Person> findByEmail(String email);
-	
+	public List<Person> findAll();
+	public Person findByEmail(String email);
+	public Person findByid(long id);
+	public Person findByFirstName(String firstName);
 }

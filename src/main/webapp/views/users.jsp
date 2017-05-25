@@ -11,6 +11,7 @@
 <title>Users</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -27,7 +28,7 @@
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li ><a href="/">Home</a></li>
+					<li><a href="/">Home</a></li>
 					<li><a href="/products">Products</a></li>
 					<li><a href="/product">AddProduct</a></li>
 					<li><a href="/order">Order</a></li>
@@ -43,7 +44,22 @@
 	</nav>
 
 	<div class="container">
-		<h1>Users Page</h1>
+		<h1>Users List</h1>
+		<div id="userslist">
+			<table style="width: 75%">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>Phone</th>
+					</tr>
+				</thead>
+				<tbody id="tbody">
+				</tbody>
+			</table>
+		</div>
 	</div>
 	<!-- /.container -->
 	<script
@@ -51,6 +67,6 @@
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 		type="text/javascript"></script>
-	<script src="/js/coffeshop.js" type="text/javascript"></script>
+	<script src="/js/users.js" type="text/javascript"></script>
 </body>
 </html>

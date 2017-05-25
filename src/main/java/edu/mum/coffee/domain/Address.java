@@ -7,6 +7,12 @@ import javax.persistence.Id;
 @Entity
 public class Address {
 
+	@Override
+	public String toString() {
+		return "Address [id=" + id + ", city=" + city + ", state=" + state + ", country=" + country + ", zipcode="
+				+ zipcode + "]";
+	}
+
 	@Id
 	@GeneratedValue
 	private int id;

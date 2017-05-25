@@ -1,5 +1,6 @@
 package edu.mum.coffee.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,12 @@ public class OrderController {
 	}
 	
 	@RequestMapping(value="/ws/order",method=RequestMethod.POST)
-	public void createOrder(@RequestBody Order order){
+	public void createOrder(@RequestBody Order order ,Principal principal){
+		//String username = principal.getName();
+		
+		//get person by email(name)
+		///save the order and the order line will be saved together
+		
 		orderService.save(order);
 	}
 	
@@ -37,10 +43,10 @@ public class OrderController {
 	/*@RequestMapping(value="/ws/orders",method=RequestMethod.GET)
 	public List<Order> findByPerson(@RequestBody Person person){
 		return orderService.findByPerson(person);
-	}*/
+	}
 	
 	
-	/*@RequestMapping(value="/ws/orders",method=RequestMethod.GET)
+	@RequestMapping(value="/ws/orders",method=RequestMethod.GET)
 	public List<Order> getAllOrders(){
 		return orderService.findAll();
 	}
@@ -52,9 +58,9 @@ public class OrderController {
 	}
 	
 	
-	/*@RequestMapping(value="/ws/order/{id}",method=RequestMethod.DELETE)
+	@RequestMapping(value="/ws/order/{id}",method=RequestMethod.DELETE)
 	public void deleteOrder(@RequestBody Order order){
 		orderService.delete(order);
-	}*/
+	}
 	
 }

@@ -44,6 +44,8 @@
 
 	<div class="container">
 		<h1>Profile Page</h1>
+		<sec:authentication property="principal.username" var="username" />
+			<input id="userId" type="hidden" value="${username}">
 	</div>
 	<!-- /.container -->
 	<script
@@ -51,6 +53,6 @@
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 		type="text/javascript"></script>
-	<script src="/js/coffeshop.js" type="text/javascript"></script>
+	<script src="/js/profile.js" type="text/javascript"></script>
 </body>
 </html>

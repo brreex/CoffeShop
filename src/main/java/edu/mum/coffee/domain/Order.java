@@ -81,12 +81,10 @@ public class Order {
 		this.orderLines.remove(orderLine);
 		orderLine.setOrder(null);
 	}
-
 	public void clearOrderLines() {
 		for (Orderline orderline : orderLines) {
 			orderline.setOrder(null);
 		}
 		orderLines.clear();
 	}
-
 }

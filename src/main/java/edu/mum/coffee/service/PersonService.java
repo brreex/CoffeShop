@@ -19,8 +19,12 @@ public class PersonService {
 	public Person savePerson(Person person) {
 		return personRepository.save(person);
 	}
+	
+	public List<Person> getAllPerson() {
+		return personRepository.findAll();
+	}
 
-	public List<Person> findByEmail(String email) {
+	public Person getByEmail(String email) {
 		return personRepository.findByEmail(email);
 	}
 
@@ -30,6 +34,10 @@ public class PersonService {
 
 	public void removePerson(Person person) {
 		personRepository.delete(person);
+	}
+	
+	public Person getByFirstName(String firstName) {
+		return personRepository.findByFirstName(firstName);
 	}
 
 }

@@ -11,6 +11,12 @@ import javax.persistence.OneToOne;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Person {
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", address=" + address + ", phone=" + phone + ", enable=" + enable + "]";
+	}
+
 	@Id
 	@GeneratedValue
 	private long id;
@@ -25,7 +31,11 @@ public class Person {
 	public long getId() {
 		return id;
 	}
-
+ 
+	public Person(){
+		
+	}
+	
 	public boolean isEnable() {
 		return enable;
 	}
