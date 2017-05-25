@@ -45,7 +45,11 @@
 	<div class="container">
 		<h1>Profile Page</h1>
 		<sec:authentication property="principal.username" var="username" />
-			<input id="userId" type="hidden" value="${username}">
+		<input id="userId" type="hidden" value="${username}">
+
+		<form id="submitForm" method="PUT" action="/ws/person">
+		</form>
+
 	</div>
 	<!-- /.container -->
 	<script
