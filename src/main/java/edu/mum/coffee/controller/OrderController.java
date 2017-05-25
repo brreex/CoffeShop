@@ -1,6 +1,7 @@
 package edu.mum.coffee.controller;
 
 import java.security.Principal;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,21 +28,26 @@ public class OrderController {
 	ProductService productService;
 
 	@Autowired
-	public OrderController(OrderService orderService, PersonService personService) {
+	public OrderController(OrderService orderService, PersonService personService, ProductService productService) {
 		this.orderService = orderService;
 		this.personService = personService;
+		this.productService = productService;
 	}
 
 	@RequestMapping(value = "/ws/order/{id}", method = RequestMethod.POST)
 	public void createOrder(@PathVariable int id, @RequestParam int quantity, Principal principal) {
+
 		Order order = new Order();
 		Person person = personService.getByEmail(principal.getName());
+
 		order.setPerson(person);
 		Orderline orderline = new Orderline();
+
 		orderline.setOrder(order);
+		order.setOrderDate(new Date());
 		orderline.setProduct(productService.getProduct(id));
 		orderline.setQuantity(quantity);
-		
+
 		order.addOrderLine(orderline);
 		orderService.save(order);
 	}

@@ -14,7 +14,7 @@ function ajaxSuccess(jsonData) {
 								+ "<td>"+ item.description+ "</td>"
 								+ "<td>"+ item.price+ "</td>"
 								+ "<td>"+ item.productType
-								+ "</td>"+ "<td> <input type='text' placeholder='Quantity' name='quantity' /></td>" 
+								+ "</td>"+ "<td> <input type='text' id='quantity' name='quantity' placeholder='Quantity' name='quantity' /></td>" 
 								+ "</td>"+ "<td> <input type='submit' value='Order' onclick='orderProduct("+ item.id + ")'/></td>" + "</tr>";
 						$('#tbody').append(eachrow);
 					});
@@ -25,9 +25,9 @@ function ajaxFailure(Error) {
 }
 
 function orderProduct(id) {
-	var quantity = $('#quantity');
+	var quantity = $('#quantity').val();
 	$.ajax({
-		url : 'http://localhost:8080/ws/product/' + id+"?quantity="+quantity,
+		url : 'http://localhost:8080/ws/order/' + id+"?quantity="+quantity,
 		type : 'POST',
 		success : function() {
 			alert('Order Placed')
