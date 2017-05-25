@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
 import edu.mum.coffee.domain.Person;
 import edu.mum.coffee.service.PersonService;
 
@@ -21,12 +22,13 @@ public class PersonController {
 		this.personService = personService;
 	}
 
-	@RequestMapping(value = "/ws/person", method = RequestMethod.POST)
-	public ModelAndView addPerson(@ModelAttribute Person person, Model model) {
+	@RequestMapping(value="/ws/person",method=RequestMethod.POST)
+	public ModelAndView addProduct(@ModelAttribute Person person, Model model){
 		ModelAndView mnv = new ModelAndView();
-		mnv.setViewName("products");
+		mnv.setViewName("order");
 		System.out.println(person);
 		personService.savePerson(person);
+		model.addAttribute("message","Person Saved");
 		return mnv;
 	}
 
@@ -34,7 +36,7 @@ public class PersonController {
 	public List<Person> getallPersons() {
 		return personService.getAllPerson();
 	}
-
+ 
 	@RequestMapping(value = "/ws/person/{email}", method = RequestMethod.GET)
 	public Person getAllPersons(@PathVariable String email) {
 		System.out.println(email);

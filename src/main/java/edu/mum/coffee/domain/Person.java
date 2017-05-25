@@ -25,6 +25,8 @@ public class Person {
 	private String email;
 	@OneToOne(cascade = CascadeType.ALL)
 	private Address address;
+	/*@OneToOne(cascade = CascadeType.ALL)
+	private User user;*/
 	private String phone;
 	private boolean enable;
 
@@ -59,11 +61,9 @@ public class Person {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
 	public String getEmail() {
 		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
@@ -71,7 +71,6 @@ public class Person {
 	public Address getAddress() {
 		return address;
 	}
-
 	public void setAddress(Address address) {
 		this.address = address;
 	}
@@ -79,9 +78,7 @@ public class Person {
 	public String getPhone() {
 		return phone;
 	}
-
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
 }

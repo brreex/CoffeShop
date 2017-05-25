@@ -13,11 +13,17 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	@Autowired
+    DataSource dataSource;
+	
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/", "/home", "/index","/ws/*/*","/ws/*").permitAll()
+                .antMatchers("/", "/home", "/index","/ws/*/*","/ws/*","/signup").permitAll()
+                .antMatchers("/products","/users","/addproduct","/product").hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers("/order","/profile").hasAnyAuthority("ROLE_USER")
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -32,10 +38,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
     }
 
-	
-	@Autowired
-    DataSource dataSource;
- 
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(dataSource)

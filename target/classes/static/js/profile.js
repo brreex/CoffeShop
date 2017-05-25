@@ -1,6 +1,5 @@
 $(function() {
 	var id = $('#userId').val();
-	alert(id);
 	$.ajax({
 		url : 'http://localhost:8080/ws/person/'+id,
 		type : 'GET',

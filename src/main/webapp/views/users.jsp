@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-	<nav class="navbar navbar-default">
+		<nav class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed"
@@ -28,21 +28,32 @@
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="/">Home</a></li>
-					<li><a href="/products">Products</a></li>
-					<li><a href="/product">AddProduct</a></li>
-					<li><a href="/order">Order</a></li>
-					<li class="active"><a href="/users">Users</a></li>
+					<li class="active"><a href="/">Home</a></li>
+					<sec:authorize access="hasRole('ROLE_ADMIN')">
+						<li><a href="/products">Products</a></li>
+						<li><a href="/product">AddProduct</a></li>
+						<li><a href="/users">Users</a></li>
+					</sec:authorize>
+					<sec:authorize access="hasRole('ROLE_USER')">
+						<li><a href="/order">Order</a></li>
+					</sec:authorize>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/profile">Profile</a></li>
-					<li><a href="/signup">SignUp</a></li>
+					<sec:authorize access="hasRole('ROLE_USER')">
+						<li><a href="/profile">Profile</a></li>
+					</sec:authorize>
+					<sec:authorize access="!hasRole('ROLE_USER')">
+						<li><a href="/signup">SignUp</a></li>
+						<li><a href="/secure">Login</a></li>
+					</sec:authorize>
+					<sec:authorize access="hasRole('ROLE_USER')">
+						<li><a href="/logout">Logout</a></li>
+					</sec:authorize>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
 		</div>
 	</nav>
-
 	<div class="container">
 		<h1>Users List</h1>
 		<div id="userslist">

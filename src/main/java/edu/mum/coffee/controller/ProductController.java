@@ -37,16 +37,10 @@ public class ProductController {
 		return productService.getProduct(id);
 	}
 	
-	/*@RequestMapping(value="/ws/product",method=RequestMethod.POST)
-	public void addProduct(@RequestBody Product product){
-		System.out.println(product);
-		productService.save(product);
-	}*/
-	
 	@RequestMapping(value="/ws/product",method=RequestMethod.POST)
 	public ModelAndView addProduct(@ModelAttribute Product prod, Model model){
 		ModelAndView mnv = new ModelAndView();
-		mnv.setViewName("addproduct");
+		mnv.setViewName("products");
 		System.out.println(prod);
 		productService.save(prod);
 		model.addAttribute("message","Product Saved");

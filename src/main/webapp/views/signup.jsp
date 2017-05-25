@@ -28,20 +28,27 @@
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="/">Home</a></li>
-					<li><a href="/products">Products</a></li>
-					<li><a href="/product">AddProduct</a></li>
-					<li><a href="/order">Order</a></li>
-					<li><a href="/users">Users</a></li>
+					<sec:authorize access="hasRole('ROLE_ADMIN')">
+						<li><a href="/products">Products</a></li>
+						<li><a href="/product">AddProduct</a></li>
+						<li><a href="/users">Users</a></li>
+					</sec:authorize>
+
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/profile">Profile</a></li>
-					<li><a href="/signup">SignUp</a></li>
+					<sec:authorize access="hasRole('ROLE_USER')">
+						<li><a href="/profile">Profile</a></li>
+						<li><a href="/order">Order</a></li>
+					</sec:authorize>
+					<sec:authorize access="!hasRole('ROLE_USER')">
+						<li><a href="/signup">SignUp</a></li>
+						<li><a href="/login">Login</a></li>
+					</sec:authorize>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
 		</div>
 	</nav>
-
 	<div class="container">
 		<form id="submitForm" method="post" action="/ws/person">
 			<div class="form-group">
