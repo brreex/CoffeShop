@@ -18,7 +18,6 @@ function ajaxSuccess(jsonData) {
 					"<div class='form-group'> <label for='email'>Email:</label> <input type='text' value="+jsonData.email+" class='form-control' id='email' name='email'> </div>" +
 					"<div class='form-group'> <label for='phone'>Phone:</label> <input type='text' value ="+jsonData.phone+" class='form-control' id='phone' name='phone'> </div>" +
 					"<button type='submit' class='btn btn-default' onclick='saveProfile()'>Save</button>";
-	
 	$('#submitForm').append(formdata);
 }
 
